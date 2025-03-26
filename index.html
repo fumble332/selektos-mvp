@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <title>Selektos</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selektos - Lecteur de Musique Interactif</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Selektos: 1-Minute Audio Mag</h1>
-  <input type="file" id="upload" accept="audio/*">
-  <div id="snippet-feed">
-    <div>SynthJake - Pulse <audio controls src="sound/1.mp3"></audio></div>
-<div>FieldScout - Birds <audio controls src="sound/2.mp3"></audio></div>
-<div>BeatCrate - Drop <audio controls src="sound/3.mp3"></audio></div>
-  </div>
-  <script src="script.js"></script>
+    <div class="container">
+        <h1>Selektos</h1>
+        <div id="disc-grid" class="disc-grid">
+            <!-- Les disques seront ajoutés dynamiquement ici -->
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
