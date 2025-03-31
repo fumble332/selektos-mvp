@@ -11,6 +11,22 @@ body {
     width: 100vw;
     overflow-x: hidden;
     padding: 15px;
+    padding-bottom: 85px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 70px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .grid-container {
@@ -18,10 +34,11 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     width: 100%;
-    max-width: 100vw;
+    max-width: 935px;
     min-height: 100vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    padding-bottom: 100px;
 }
 
 .track-circle {
@@ -67,12 +84,69 @@ body {
     background: rgba(0, 0, 0, 0.3);
 }
 
+.nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.nav-item {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #333;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.nav-item:active {
+    transform: scale(0.9);
+}
+
 @media (max-width: 480px) {
     body {
         padding: 10px;
+        padding-bottom: 85px;
     }
     
     .grid-container {
         gap: 10px;
+    }
+}
+
+@media (min-width: 481px) {
+    body {
+        padding: 30px;
+        padding-left: 120px;
+    }
+    
+    .grid-container {
+        gap: 28px;
+        max-width: 700px;
+    }
+
+    .nav-bottom {
+        width: 70px;
+        height: auto;
+        max-width: none;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 30px;
+    }
+
+    body::after {
+        height: 50px;
+        background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
     }
 } 
